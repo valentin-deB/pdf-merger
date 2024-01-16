@@ -19,7 +19,12 @@ declare namespace Preferences {
 
 declare namespace Arguments {
   /** Arguments passed to the `index` command */
-  export type Index = {}
+  export type Index = {
+  /** merged.pdf */
+  "fileName": string,
+  /** Delete original files */
+  "deleteOriginalFiles": "false"
+}
 }
 
 

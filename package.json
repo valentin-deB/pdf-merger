@@ -17,7 +17,27 @@
       "name": "index",
       "title": "Merge PDF",
       "description": "Merge the selected PDF files into one.",
-      "mode": "no-view"
+      "mode": "no-view",
+      "icon": "icon.png",
+      "arguments": [
+        {
+          "name": "fileName",
+          "placeholder": "merged.pdf",
+          "required": false,
+          "type": "text"
+        },
+        {
+          "name": "deleteOriginalFiles",
+          "placeholder": "Delete original files",
+          "type": "dropdown",
+          "data": [
+            {
+              "title": "Keep original files",
+              "value": "false"
+            }
+          ]
+        }
+      ]
     }
   ],
   "dependencies": {
