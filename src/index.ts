@@ -13,6 +13,7 @@ export default async function Command(props: {
   arguments: { fileName: string; deleteOriginalFiles: string };
 }) {
   const { fileName, deleteOriginalFiles } = props.arguments;
+  
 
   try {
     const selectedFinderItems = await getSelectedFinderItems();
@@ -86,14 +87,14 @@ function getOutputPath(
   deleteOriginalFiles: string,
   fileName: string,
 ): string {
-  let finalFileName = "merged";
+  let finalFileName = fileName || "merged";
 
-  if (filePaths.length === 0) {
-    return path.join(homedir(), "Downloads", finalFileName + ".pdf");
+  if (!finalFileName.endsWith(".pdf")) {
+    finalFileName += ".pdf";
   }
 
-  if (fileName) {
-    finalFileName = fileName;
+  if (filePaths.length === 0) {
+    return path.join(homedir(), "Downloads", finalFileName);
   }
 
   const firstFilePath = filePaths[0];
@@ -111,8 +112,8 @@ function getOutputPath(
     }
   }
   if (sameDirectory) {
-    return path.join(firstDirPath, finalFileName + ".pdf");
+    return path.join(firstDirPath, finalFileName);
   } else {
-    return path.join(homedir(), "Downloads", finalFileName + ".pdf");
+    return path.join(homedir(), "Downloads", finalFileName);
   }
 }

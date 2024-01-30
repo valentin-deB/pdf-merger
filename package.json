@@ -31,8 +31,13 @@
             {
               "title": "Keep original files",
               "value": "false"
+            },
+            {
+              "title": "Delete original files",
+              "value": "true"
             }
-          ]
+          ],
+          "defaultValue": "keep"
         }
       ]
     }

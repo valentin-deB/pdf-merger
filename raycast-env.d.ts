@@ -23,7 +23,7 @@ declare namespace Arguments {
   /** merged.pdf */
   "fileName": string,
   /** Delete original files */
-  "deleteOriginalFiles": "false"
+  "deleteOriginalFiles": "false" | "true"
 }
 }
 
